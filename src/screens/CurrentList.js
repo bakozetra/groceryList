@@ -11,7 +11,7 @@ import { useCurrentList } from '../util/ListManager';
 //     AsyncStorage.setItem("@@GrocerList/currentList", JSON.stringify(list))
 // }
 
-export default () => {
+export default ({navigation}) => {
     const { list,
         loading,
         addItem,
@@ -65,6 +65,9 @@ export default () => {
                         isFavourite={index < 2}
                         onAddedSwipe={() => removeItem(item.id)}
                         onDeleteSwipe={() => removeItem(item.id)}
+                        onRowPress={() => {
+                            navigation.navigate("ItemDetails")
+                        }}
                     />
 
                 )}
