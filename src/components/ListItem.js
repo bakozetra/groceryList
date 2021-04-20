@@ -46,12 +46,13 @@ const styles = StyleSheet.create({
     padding: 20
 
   },
-  // actionText: {
-  //     color: '#fff',
-  //     fontWeight: "600",
-  //     padding: 20
-
-  // }
+  sectionContainer : {
+    backgroundColor: "#d3d3d3",
+    paddingVertical : 10,
+  } ,
+  sectionText : {
+    fontWeight : "600",
+  }
 })
 
 export const Separator = () => <View style={styles.separator} />
@@ -86,8 +87,18 @@ const RightActions = (progress, dragX) => {
         Delete
         </Animated.Text>
     </View>
+
   )
 }
+
+
+export const SectionHeader = ({title}) => {
+ return (  <View style={[styles.container , styles.sectionContainer]}>
+    <Text style={styles.sectionText}>{title}</Text>
+  </View>
+ )
+}
+
 const ListItem = ({ onRowPress, name, onFavouritePress, isFavourite, onAddedSwipe, onDeleteSwipe }) => {
 
   let starIcon
