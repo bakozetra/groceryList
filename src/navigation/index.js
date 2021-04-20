@@ -35,7 +35,7 @@ const FavouritesListStack = () => {
 
 const Tab = createBottomTabNavigator();
 const Tabs = () => {
-    return (
+    return ( 
         <NavigationContainer>
             <Tab.Navigator
                 screenOptions={({ route }) => ({

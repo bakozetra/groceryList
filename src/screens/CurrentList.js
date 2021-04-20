@@ -31,7 +31,7 @@ export default ({ navigation }) => {
         </SafeAreaView>)
     }
     console.log(cart);
-    console.log(favourites);
+    // console.log(favourites);
 
     return (
         <SafeAreaView style={{ flex: 1 }}>
@@ -44,20 +44,18 @@ export default ({ navigation }) => {
                     renderSectionHeader={({ section }) => (
                         <SectionHeader title={section.title} />
                     )}
-
+                   
                     renderItem={({ item, index }) => (
+                      
                         <ListItem name={item.name}
-                            onFavouritePress={() => console.log('favvvvv')}
-                            isFavourite={() => addToFavourites(item)}
+                            onFavouritePress={() => addToFavourites(item)}
+                            isFavourite={item.isFavourited}
                             onAddedSwipe={() => addToCart(item)}
                             onDeleteSwipe={() => removeItem(item.id)}
                             onRowPress={() => {
                                 navigation.navigate("ItemDetails", {
                                     item
-                                }) ,
-                                navigation.navigate("FavoritesList" , {
-                                    item
-                                })
+                                }) 
                             }}
                         />
 

@@ -1,7 +1,12 @@
 import React from 'react';
 import { View , Text } from 'react-native';
-export default ({route}) => (
+import { useCurrentList } from '../util/ListManager';
+export default () => {
+  const {favourites} = useCurrentList()
+  console.log("favourites" , favourites);
+  return (
   <View>
-    <Text>{JSON.stringify(route.params.item , null ,2)}</Text>
+    <Text>HEloo</Text>
   </View>
-)
+  )
+}

@@ -46,12 +46,12 @@ const styles = StyleSheet.create({
     padding: 20
 
   },
-  sectionContainer : {
+  sectionContainer: {
     backgroundColor: "#d3d3d3",
-    paddingVertical : 10,
-  } ,
-  sectionText : {
-    fontWeight : "600",
+    paddingVertical: 10,
+  },
+  sectionText: {
+    fontWeight: "600",
   }
 })
 
@@ -92,12 +92,14 @@ const RightActions = (progress, dragX) => {
 }
 
 
-export const SectionHeader = ({title}) => {
- return (  <View style={[styles.container , styles.sectionContainer]}>
-    <Text style={styles.sectionText}>{title}</Text>
-  </View>
- )
+export const SectionHeader = ({ title }) => {
+  return (
+    <View style={[styles.container, styles.sectionContainer]}>
+      <Text style={styles.sectionText}>{title}</Text>
+    </View>
+  )
 }
+
 
 const ListItem = ({ onRowPress, name, onFavouritePress, isFavourite, onAddedSwipe, onDeleteSwipe }) => {
 
@@ -109,7 +111,6 @@ const ListItem = ({ onRowPress, name, onFavouritePress, isFavourite, onAddedSwip
       android: require('../assets/icons/md-star.png'),
     })
   } else {
-
     starIcon = Platform.select({
       ios: require('../assets/icons/ios-star-outline.png'),
       android: require('../assets/icons/md-star-outline.png'),
